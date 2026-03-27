@@ -38,7 +38,7 @@ func OpenDBWithDriver(driver string, dbstring string) (*sql.DB, error) {
 	case "starrocks":
 		driver = "mysql"
 	case "spark":
-		driver = "hive"
+		driver = "spark"
 	}
 
 	switch driver {
