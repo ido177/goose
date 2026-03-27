@@ -14,10 +14,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/pressly/goose/v3/database"
-	"github.com/pressly/goose/v3/internal/controller"
-	"github.com/pressly/goose/v3/internal/gooseutil"
-	"github.com/pressly/goose/v3/internal/sqlparser"
+	"github.com/ido177/goose/v3/database"
+	"github.com/ido177/goose/v3/internal/controller"
+	"github.com/ido177/goose/v3/internal/gooseutil"
+	"github.com/ido177/goose/v3/internal/sqlparser"
 	"go.uber.org/multierr"
 )
 
@@ -377,7 +377,7 @@ func (p *Provider) up(
 		// implementation is that we can make stronger guarantees about unapplied migrations.
 		//
 		// In cases where users do not use out-of-order migrations, we want to surface an error if
-		// there are older unapplied migrations. See https://github.com/pressly/goose/issues/761 for
+		// there are older unapplied migrations. See https://github.com/ido177/goose/issues/761 for
 		// more details.
 		//
 		// And in cases where users do use out-of-order migrations, we need to build a list of older

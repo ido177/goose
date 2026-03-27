@@ -3,8 +3,8 @@ package goose
 import (
 	"fmt"
 
-	"github.com/pressly/goose/v3/database"
-	"github.com/pressly/goose/v3/internal/legacystore"
+	"github.com/ido177/goose/v3/database"
+	"github.com/ido177/goose/v3/internal/legacystore"
 )
 
 // Dialect is the type of database dialect. It is an alias for [database.Dialect].

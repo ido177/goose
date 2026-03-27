@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pressly/goose/v3/pkg/dockermanage"
+	"github.com/ido177/goose/v3/pkg/dockermanage"
 )
 
 const (

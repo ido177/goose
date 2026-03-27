@@ -4,7 +4,7 @@ INSERT INTO owners (owner_id, owner_name, owner_type) VALUES
   (1, 'lucas', 'user'),
   (2, 'space', 'organization'),
   (3, 'james', 'user'),
-  (4, 'pressly', 'organization');
+  (4, 'ido177', 'organization');
 -- +goose StatementEnd
 
 -- +goose Down

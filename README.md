@@ -3,11 +3,11 @@
 <img align="right" width="125" src="assets/goose_logo.png">
 
 [![Goose
-CI](https://github.com/pressly/goose/actions/workflows/ci.yaml/badge.svg)](https://github.com/pressly/goose/actions/workflows/ci.yaml)
+CI](https://github.com/ido177/goose/actions/workflows/ci.yaml/badge.svg)](https://github.com/ido177/goose/actions/workflows/ci.yaml)
 [![Go
-Reference](https://pkg.go.dev/badge/github.com/pressly/goose/v3.svg)](https://pkg.go.dev/github.com/pressly/goose/v3)
+Reference](https://pkg.go.dev/badge/github.com/ido177/goose/v3.svg)](https://pkg.go.dev/github.com/ido177/goose/v3)
 [![Go Report
-Card](https://goreportcard.com/badge/github.com/pressly/goose/v3)](https://goreportcard.com/report/github.com/pressly/goose/v3)
+Card](https://goreportcard.com/badge/github.com/ido177/goose/v3)](https://goreportcard.com/report/github.com/ido177/goose/v3)
 
 Goose is a database migration tool. Both a CLI and a library.
 
@@ -28,7 +28,7 @@ Manage your **database schema** by creating incremental SQL changes or Go functi
 # Install
 
 ```shell
-go install github.com/pressly/goose/v3/cmd/goose@latest
+go install github.com/ido177/goose/v3/cmd/goose@latest
 ```
 
 This will install the `goose` binary to your `$GOPATH/bin` directory.
@@ -50,7 +50,7 @@ Formulae](https://formulae.brew.sh/formula/goose#default):
 brew install goose
 ```
 
-See [installation documentation](https://pressly.github.io/goose/installation/) for more details.
+See [installation documentation](https://ido177.github.io/goose/installation/) for more details.
 
 # Usage
 
@@ -266,7 +266,7 @@ Loading from `.env` files is enabled by default. To disable this feature, set th
 If you want to load from a specific file, set the `-env` flag to the file path.
 
 For more details about environment variables, see the [official documentation on environment
-variables](https://pressly.github.io/goose/documentation/environment-variables/).
+variables](https://ido177.github.io/goose/documentation/environment-variables/).
 
 # Migrations
 
@@ -400,7 +400,7 @@ import (
     "database/sql"
     "embed"
 
-    "github.com/pressly/goose/v3"
+    "github.com/ido177/goose/v3"
 )
 
 //go:embed migrations/*.sql
@@ -430,7 +430,7 @@ structure.
 ## Go Migrations
 
 1. Create your own goose binary, see [example](./examples/go-migrations)
-2. Import `github.com/pressly/goose`
+2. Import `github.com/ido177/goose`
 3. Register your migration functions
 4. Include your `migrations` package into Go build: in `main.go`, `import _ "github.com/me/myapp/migrations"`
 5. Run goose command, ie. `goose.Up(db *sql.DB, dir string)`
@@ -444,7 +444,7 @@ package migrations
 import (
 	"database/sql"
 
-	"github.com/pressly/goose/v3"
+	"github.com/ido177/goose/v3"
 )
 
 func init() {
@@ -474,7 +474,7 @@ not end with `*_test.go`.
 # Hybrid Versioning
 
 Please, read the [versioning
-problem](https://github.com/pressly/goose/issues/63#issuecomment-428681694) first.
+problem](https://github.com/ido177/goose/issues/63#issuecomment-428681694) first.
 
 By default, if you attempt to apply missing (out-of-order) migrations `goose` will raise an error.
 However, If you want to apply these missing migrations pass goose the `-allow-missing` flag, or if

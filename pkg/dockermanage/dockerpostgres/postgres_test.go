@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
+	"github.com/ido177/goose/v3/pkg/dockermanage"
+	"github.com/ido177/goose/v3/pkg/dockermanage/dockerpostgres"
 	"github.com/jackc/pgx/v5"
-	"github.com/pressly/goose/v3/pkg/dockermanage"
-	"github.com/pressly/goose/v3/pkg/dockermanage/dockerpostgres"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

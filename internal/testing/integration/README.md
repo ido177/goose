@@ -1,6 +1,6 @@
 # Integration tests
 
-This directory contains integration tests for the [pressly/goose/v3][goose_module] Go module. An
+This directory contains integration tests for the [ido177/goose/v3][goose_module] Go module. An
 integration test is a test that runs against a real database (docker container) and exercises the
 same driver used by the CLI.
 
@@ -54,5 +54,5 @@ They are meantto ensure that the goose library works with the various databases 
 the chosen drivers. We do not test every possible combination of operations, nor do we test every
 possible edge case. We rely on the unit tests in the goose package to cover library-specific logic.
 
-[goose_module]: https://pkg.go.dev/github.com/pressly/goose/v3
+[goose_module]: https://pkg.go.dev/github.com/ido177/goose/v3
 [migrations_dir]: ./testdata/migrations

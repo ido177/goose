@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/pressly/goose/v3"
+	"github.com/ido177/goose/v3"
 )
 
 func init() {

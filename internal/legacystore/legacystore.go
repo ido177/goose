@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pressly/goose/v3/database"
-	"github.com/pressly/goose/v3/database/dialect"
-	"github.com/pressly/goose/v3/internal/dialects"
+	"github.com/ido177/goose/v3/database"
+	"github.com/ido177/goose/v3/database/dialect"
+	"github.com/ido177/goose/v3/internal/dialects"
 )
 
 // Store is the interface that wraps the basic methods for a database dialect.

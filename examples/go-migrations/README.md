@@ -39,6 +39,6 @@ $ ./goose-custom sqlite3 ./foo.db status
    ```go
    import (
        // Invoke init() functions within migrations pkg.
-       _ "github.com/pressly/goose/example/migrations-go"
+       _ "github.com/ido177/goose/example/migrations-go"
    )
    ```

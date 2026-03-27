@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/pressly/goose/v3"
-	_ "github.com/pressly/goose/v3/tests/gomigrations/register/testdata"
+	"github.com/ido177/goose/v3"
+	_ "github.com/ido177/goose/v3/tests/gomigrations/register/testdata"
 	"github.com/stretchr/testify/require"
 )
 

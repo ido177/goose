@@ -5,7 +5,7 @@ package main
 import (
 	"database/sql"
 
-	_ "github.com/beltran/gohive/v2"
+	"github.com/beltran/gohive/v2"
 )
 
 func init() {

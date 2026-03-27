@@ -17,7 +17,7 @@ const (
 
 	// ManagedLabelKey marks containers created by this package. The value indicates the container
 	// type (e.g., "postgres"). Presence of the key means the container is managed.
-	ManagedLabelKey = "pressly.goose"
+	ManagedLabelKey = "ido177.goose"
 )
 
 // Option configures container start behavior.

@@ -17,10 +17,10 @@ import (
 	"text/tabwriter"
 	"text/template"
 
+	"github.com/ido177/goose/v3"
+	"github.com/ido177/goose/v3/internal/migrationstats"
 	"github.com/joho/godotenv"
 	"github.com/mfridman/xflag"
-	"github.com/pressly/goose/v3"
-	"github.com/pressly/goose/v3/internal/migrationstats"
 )
 
 var (
@@ -324,7 +324,7 @@ var sqlMigrationTemplate = template.Must(template.New("goose.sql-migration").Par
 -- This file was automatically created running goose init. If you're familiar with goose
 -- feel free to remove/rename this file, write some SQL and goose up. Briefly,
 -- 
--- Documentation can be found here: https://pressly.github.io/goose
+-- Documentation can be found here: https://ido177.github.io/goose
 --
 -- A single goose .sql file holds both Up and Down migrations.
 -- 

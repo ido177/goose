@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/pressly/goose/v3/database/dialect"
+	"github.com/ido177/goose/v3/database/dialect"
 )
 
 // DefaultSparkStorageFormat is the default storage format used for the goose_db_version table in Spark SQL.
