@@ -42,7 +42,7 @@ func (s *spark) CreateTable(tableName string) string {
 	// Since Spark does not support AUTO_INCREMENT or IDENTITY intuitively here,
 	// the 'id' field remains a standard bigint.
 	q := `CREATE TABLE IF NOT EXISTS %s (
-		id bigint,
+		id string,
 		version_id bigint,
 		is_applied boolean,
 		tstamp timestamp
@@ -54,7 +54,7 @@ func (s *spark) CreateTable(tableName string) string {
 func (s *spark) InsertVersion(tableName string) string {
 	id := uuid.Must(uuid.NewV7()).String()
 
-	q := `INSERT INTO %s (id, version_id, is_applied, tstamp) VALUES (%s, ?, ?, CURRENT_TIMESTAMP)`
+	q := `INSERT INTO %s (id, version_id, is_applied, tstamp) VALUES ('%s', ?, ?, CURRENT_TIMESTAMP)`
 	return fmt.Sprintf(q, tableName, id)
 }
 
