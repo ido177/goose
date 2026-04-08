@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/google/uuid"
+
 	"github.com/ido177/goose/v3/database/dialect"
 )
 
 // DefaultSparkStorageFormat is the default storage format used for the goose_db_version table in Spark SQL.
-var DefaultSparkStorageFormat = "ICEBERG"
+var DefaultSparkStorageFormat = "PAIMON"
 
 // NewSpark returns a new [dialect.Querier] for the Spark SQL dialect.
 // It initializes the querier using the default storage format (ICEBERG).
@@ -50,8 +52,10 @@ func (s *spark) CreateTable(tableName string) string {
 
 // InsertVersion generates the SQL to insert a new migration record.
 func (s *spark) InsertVersion(tableName string) string {
-	q := `INSERT INTO %s (version_id, is_applied, tstamp) VALUES (?, ?, CURRENT_TIMESTAMP)`
-	return fmt.Sprintf(q, tableName)
+	id := uuid.Must(uuid.NewV7()).String()
+
+	q := `INSERT INTO %s (id, version_id, is_applied, tstamp) VALUES (%s, ?, ?, CURRENT_TIMESTAMP)`
+	return fmt.Sprintf(q, tableName, id)
 }
 
 // DeleteVersion generates the SQL to delete a migration record.
