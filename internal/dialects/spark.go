@@ -45,7 +45,7 @@ func (s *spark) CreateTable(tableName string) string {
 
 	switch s.storageFormat {
 	case "PAIMON":
-		tblProps = "\n    TBLPROPERTIES ('primary-key'='id','bucket'='1','full-compaction.delta-commits'='1','snapshot.num-retained.max'='1')"
+		tblProps = "\n    TBLPROPERTIES ('primary-key'='id','bucket'='1','full-compaction.delta-commits'='1','snapshot.num-retained.max'='10')"
 	case "ICEBERG":
 		tblProps = "\n    TBLPROPERTIES ('format-version'='2')"
     }
