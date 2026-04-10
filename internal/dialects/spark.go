@@ -41,13 +41,21 @@ func (s *spark) CreateTable(tableName string) string {
 	// Spark SQL uses the 'USING' clause for table formats instead of 'STORED BY'.
 	// Since Spark does not support AUTO_INCREMENT or IDENTITY intuitively here,
 	// the 'id' field remains a standard bigint.
+	var tblProps string
+
+	switch s.storageFormat {
+	case "PAIMON":
+		tblProps = "\n    TBLPROPERTIES ('primary-key'='id')"
+	case "ICEBERG":
+		tblProps = "\n    TBLPROPERTIES ('format-version'='2')"
+    }
 	q := `CREATE TABLE IF NOT EXISTS %s (
 		id string,
 		version_id bigint,
 		is_applied boolean,
 		tstamp timestamp
-	) USING %s`
-	return fmt.Sprintf(q, tableName, s.storageFormat)
+	) USING %s%s`
+	return fmt.Sprintf(q, tableName, s.storageFormat, tblProps)
 }
 
 // InsertVersion generates the SQL to insert a new migration record.
